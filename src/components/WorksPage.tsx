@@ -45,7 +45,7 @@ export default function WorksPage() {
         <a href="/" className="logo">
           AD<span>.</span>
         </a>
-        <a href="/" className="nav-contact">Back to portfolio ↗</a>
+        <a href="/" className="nav-contact">Back to portfolio ↑</a>
       </nav>
 
       <section className="section works-page-heading">
@@ -79,7 +79,7 @@ export default function WorksPage() {
       <section className="contact-section" id="contact">
         <p className="section-label">CONTACT</p>
         <h2>Have an idea?<br /><em>Let's build it.</em></h2>
-        <a href="mailto:damilolaadeyanju89@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Damilola%2C%0A%0AI%27d%20like%20to%20talk%20about%20a%20project." className="contact-button">Start a conversation ↗</a>
+        <a href="mailto:damilolaadeyanju89@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Damilola%2C%0A%0AI%27d%20like%20to%20talk%20about%20a%20project." className="contact-button">Start a conversation ↑</a>
       </section>
     </main>
   );

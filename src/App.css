@@ -40,7 +40,8 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: auto;
   height: 90px;
   padding: 0 5vw;
   display: flex;
@@ -66,9 +67,14 @@ footer strong span {
 }
 
 .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: clamp(14px, 3vw, 38px);
   align-items: center;
+  flex: none;
+  white-space: nowrap;
 }
 
 .nav-links a,
@@ -1380,6 +1386,7 @@ footer strong span {
   position: relative;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 14px;
   margin-top: 34px;
 }
@@ -1614,9 +1621,6 @@ footer p {
 
   .nav-links {
     gap: clamp(9px, 3.2vw, 18px);
-    flex: 1;
-    justify-content: flex-end;
-    margin-left: 18px;
   }
 
   .nav-links a {
@@ -1626,6 +1630,11 @@ footer p {
 
   .nav-contact {
     font-size: 9px;
+  }
+
+  .hero,
+  .contact-section {
+    min-height: 100dvh;
   }
 
   .section-label {
@@ -1677,8 +1686,8 @@ footer p {
   }
 
   .project-visual {
-    min-height: 350px;
-    height: 100vw;
+    height: clamp(280px, 78vw, 420px);
+    min-height: 0;
   }
 
   .project-info {
@@ -1726,6 +1735,31 @@ footer p {
 
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skills-intro {
+    display: block;
+  }
+
+  .skills-intro > p {
+    margin-top: 28px;
+  }
+
+  .learning-strip {
+    grid-template-columns: 30px 1fr 28px;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .learning-copy {
+    min-width: 0;
+  }
+
+  .learning-tags {
+    grid-column: 1 / -1;
+    padding: 16px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .certifications-grid {
@@ -1791,5 +1825,11 @@ footer p {
 
   .hero-orbital {
     opacity: 0.52;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav-contact {
+    display: none;
   }
 }
