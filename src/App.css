@@ -174,8 +174,11 @@ footer strong span {
   position: absolute;
   z-index: 1;
   isolation: isolate;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: min(58vw, 820px);
   height: 100%;
   pointer-events: none;
   opacity: 0.84;
@@ -1824,6 +1827,7 @@ footer p {
   }
 
   .hero-orbital {
+    width: 72%;
     opacity: 0.52;
   }
 }
