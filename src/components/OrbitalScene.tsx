@@ -37,6 +37,14 @@ export default function OrbitalScene() {
     ball.position.set(container.clientWidth < 800 ? 0 : 1.8, 0.2, 0);
     scene.add(ball);
 
+    const fieldHeight = 2 * Math.tan(THREE.MathUtils.degToRad(45 / 2)) * camera.position.z;
+    const fieldWidth = fieldHeight * camera.aspect;
+    const scatterPoint = (spread = 1) => ({
+      x: (Math.random() - 0.5) * fieldWidth * spread - ball.position.x,
+      y: (Math.random() - 0.5) * fieldHeight * spread - ball.position.y,
+      z: (Math.random() - 0.5) * 2.4 - ball.position.z,
+    });
+
     const rows = 112;
     const columns = 116;
     const count = rows * columns;
@@ -70,9 +78,10 @@ export default function OrbitalScene() {
         basePositions[pointIndex] = x;
         basePositions[pointIndex + 1] = y;
         basePositions[pointIndex + 2] = z;
-        scatterPositions[pointIndex] = (Math.random() - 0.5) * 11;
-        scatterPositions[pointIndex + 1] = (Math.random() - 0.5) * 7;
-        scatterPositions[pointIndex + 2] = (Math.random() - 0.5) * 3;
+        const scatteredPoint = scatterPoint(1.08);
+        scatterPositions[pointIndex] = scatteredPoint.x;
+        scatterPositions[pointIndex + 1] = scatteredPoint.y;
+        scatterPositions[pointIndex + 2] = scatteredPoint.z;
 
         const brightness = 0.58 + (z / radius + 1) * 0.16;
         color.setHSL(0.61 + brightness * 0.035, 0.25, brightness * 0.68);
@@ -121,13 +130,10 @@ export default function OrbitalScene() {
         innerBasePositions[pointIndex] = innerPositions[pointIndex];
         innerBasePositions[pointIndex + 1] = innerPositions[pointIndex + 1];
         innerBasePositions[pointIndex + 2] = innerPositions[pointIndex + 2];
-        const innerScatterRadius = 1.9 + Math.random() * 1.6;
-        const innerScatterAngle = Math.random() * Math.PI * 2;
-        const innerScatterHeight = Math.random() * 2 - 1;
-        const innerScatterWidth = Math.sqrt(1 - innerScatterHeight * innerScatterHeight);
-        innerScatterPositions[pointIndex] = Math.cos(innerScatterAngle) * innerScatterWidth * innerScatterRadius;
-        innerScatterPositions[pointIndex + 1] = innerScatterHeight * innerScatterRadius;
-        innerScatterPositions[pointIndex + 2] = Math.sin(innerScatterAngle) * innerScatterWidth * innerScatterRadius;
+        const scatteredPoint = scatterPoint(0.92);
+        innerScatterPositions[pointIndex] = scatteredPoint.x;
+        innerScatterPositions[pointIndex + 1] = scatteredPoint.y;
+        innerScatterPositions[pointIndex + 2] = scatteredPoint.z;
         color.setHSL(0.59 + (column / innerColumns) * 0.06, 0.3, 0.42 + (row / innerRows) * 0.2);
         innerColors[pointIndex] = color.r;
         innerColors[pointIndex + 1] = color.g;
