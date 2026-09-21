@@ -67,7 +67,8 @@ footer strong span {
 
 .nav-links {
   display: flex;
-  gap: 38px;
+  gap: clamp(14px, 3vw, 38px);
+  align-items: center;
 }
 
 .nav-links a,
@@ -1608,10 +1609,19 @@ footer p {
 @media (max-width: 800px) {
   .navbar {
     height: 75px;
+    padding: 0 4vw;
   }
 
   .nav-links {
-    display: none;
+    gap: clamp(9px, 3.2vw, 18px);
+    flex: 1;
+    justify-content: flex-end;
+    margin-left: 18px;
+  }
+
+  .nav-links a {
+    font-size: 9px;
+    letter-spacing: 0.04em;
   }
 
   .nav-contact {
