@@ -23,18 +23,15 @@ const additionalWorks = [
 ];
 
 function ImageWithFallback({ image, alt }: { image: string; alt: string }) {
-  const extensionFallbacks = [".jpg", ".jpeg"];
-  let fallbackIndex = 0;
-
   return (
     <img
       src={image}
       alt={alt}
       onError={(event) => {
-        if (fallbackIndex < extensionFallbacks.length) {
-          const nextExtension = extensionFallbacks[fallbackIndex];
-          fallbackIndex += 1;
-          event.currentTarget.src = image.replace(/\.[^.]+$/, nextExtension);
+        const currentSource = event.currentTarget.src.toLowerCase();
+
+        if (currentSource.endsWith(".jpg")) {
+          event.currentTarget.src = image.replace(/\.[^.]+$/, ".jpeg");
         }
       }}
     />
