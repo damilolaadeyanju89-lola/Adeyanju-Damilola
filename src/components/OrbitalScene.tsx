@@ -19,7 +19,7 @@ export default function OrbitalScene() {
       100
     );
 
-    camera.position.set(0, 0, 8.6);
+    camera.position.set(0, 0, 10);
     camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({
@@ -34,21 +34,30 @@ export default function OrbitalScene() {
 
     const ball = new THREE.Group();
     ball.scale.setScalar(1.15);
-    ball.position.set(container.clientWidth < 800 ? 0 : 1.8, 0.2, 0);
+    
+    const isMobile = container.clientWidth < 800;
+
+    ball.position.set(
+      isMobile ? 0.55 : 1.7,
+      0.2,
+      0
+    );  
     scene.add(ball);
+    
+    ball.scale.setScalar(isMobile ? 0.85 : 1.0);
 
     const fieldHeight = 2 * Math.tan(THREE.MathUtils.degToRad(45 / 2)) * camera.position.z;
     const fieldWidth = fieldHeight * camera.aspect;
-    const scatterPoint = (spread = 1) => ({
-      x: (Math.random() - 0.5) * fieldWidth * spread - ball.position.x,
-      y: (Math.random() - 0.5) * fieldHeight * spread - ball.position.y,
-      z: (Math.random() - 0.5) * 2.4 - ball.position.z,
+    const scatterPoint = (spread = 1.75) => ({
+      x: (Math.random() - 0.5) * fieldWidth * spread,
+      y: (Math.random() - 0.5) * fieldHeight * spread,
+      z: (Math.random() - 0.5) * 4,
     });
 
     const rows = 112;
     const columns = 116;
     const count = rows * columns;
-    const radius = 1.68;
+    const radius = 2.15;
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const basePositions = new Float32Array(count * 3);
@@ -78,7 +87,7 @@ export default function OrbitalScene() {
         basePositions[pointIndex] = x;
         basePositions[pointIndex + 1] = y;
         basePositions[pointIndex + 2] = z;
-        const scatteredPoint = scatterPoint(1.08);
+        const scatteredPoint = scatterPoint(1.18);
         scatterPositions[pointIndex] = scatteredPoint.x;
         scatterPositions[pointIndex + 1] = scatteredPoint.y;
         scatterPositions[pointIndex + 2] = scatteredPoint.z;
@@ -111,7 +120,7 @@ export default function OrbitalScene() {
     const innerCount = innerRows * innerColumns;
     const innerPositions = new Float32Array(innerCount * 3);
     const innerColors = new Float32Array(innerCount * 3);
-    const innerRadius = 1.05;
+    const innerRadius = 1.35;
     const innerBasePositions = new Float32Array(innerCount * 3);
     const innerScatterPositions = new Float32Array(innerCount * 3);
 
