@@ -33,18 +33,22 @@ export default function OrbitalScene() {
     container.appendChild(renderer.domElement);
 
     const ball = new THREE.Group();
-    ball.scale.setScalar(1.15);
-    
-    const isMobile = container.clientWidth < 800;
-
-    ball.position.set(
-      isMobile ? 0.55 : 1.7,
-      0.2,
-      0
-    );  
     scene.add(ball);
-    
-    ball.scale.setScalar(isMobile ? 0.85 : 1.0);
+
+    const updateResponsiveLayout = () => {
+      const width = container.clientWidth;
+      const isMobile = width < 800;
+      const responsiveScale = THREE.MathUtils.clamp(width / 1100, 0.62, 1);
+
+      ball.position.set(
+        isMobile ? 0 : THREE.MathUtils.clamp(width / 900, 1.1, 1.7),
+        0.2,
+        0
+      );
+      ball.scale.setScalar(responsiveScale);
+    };
+
+    updateResponsiveLayout();
 
     const fieldHeight = 2 * Math.tan(THREE.MathUtils.degToRad(45 / 2)) * camera.position.z;
     const fieldWidth = fieldHeight * camera.aspect;
@@ -242,6 +246,7 @@ export default function OrbitalScene() {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+      updateResponsiveLayout();
     };
 
     window.addEventListener("resize", handleResize);

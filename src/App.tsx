@@ -109,7 +109,7 @@ function App() {
         </a>
 
         <div className="nav-links">
-          <a href="#top">Home</a>
+          <a href="#top" className="active">Home</a>
           <a href="#work">Work</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
@@ -170,11 +170,32 @@ function App() {
       <section className="marquee">
         <div className="marquee-track">
           <span>FRONTEND DEVELOPMENT</span>
+          <i aria-hidden="true">✦</i>
           <span>CREATIVE DEVELOPMENT</span>
+          <i aria-hidden="true">✦</i>
           <span>UI / UX</span>
+          <i aria-hidden="true">✦</i>
           <span>3D & MOTION</span>
+          <i aria-hidden="true">✦</i>
+          <span>PROBLEM SOLVING</span>
+          <i aria-hidden="true">✦</i>
+          <span>TEAM COLLABORATION</span>
+          <i aria-hidden="true">✦</i>
+          <span>ALWAYS LEARNING</span>
+          <i aria-hidden="true">✦</i>
           <span>FRONTEND DEVELOPMENT</span>
+          <i aria-hidden="true">✦</i>
           <span>CREATIVE DEVELOPMENT</span>
+          <i aria-hidden="true">✦</i>
+          <span>UI / UX</span>
+          <i aria-hidden="true">✦</i>
+          <span>3D & MOTION</span>
+          <i aria-hidden="true">✦</i>
+          <span>PROBLEM SOLVING</span>
+          <i aria-hidden="true">✦</i>
+          <span>TEAM COLLABORATION</span>
+          <i aria-hidden="true">✦</i>
+          <span>ALWAYS LEARNING</span>
         </div>
       </section>
 
