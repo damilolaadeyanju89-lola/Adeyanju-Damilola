@@ -114,6 +114,10 @@ footer strong span {
   padding-bottom: 5px;
 }
 
+.nav-socials {
+  display: none;
+}
+
 /* HERO */
 
 .hero {
@@ -1642,6 +1646,8 @@ footer p {
   }
 
   .nav-links {
+    position: static;
+    transform: none;
     gap: clamp(9px, 3.2vw, 18px);
   }
 
@@ -1651,7 +1657,57 @@ footer p {
   }
 
   .nav-contact {
-    font-size: 9px;
+    display: none;
+  }
+
+  .nav-socials {
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 2vw, 10px);
+  }
+
+  .nav-socials a {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    place-items: center;
+    color: currentColor;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-socials a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .nav-socials svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+  }
+
+  .nav-socials svg rect,
+  .nav-socials svg circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+  }
+
+  .nav-socials svg .instagram-dot {
+    fill: currentColor;
+    stroke: none;
+  }
+
+  .nav-socials .github-link {
+    color: #f0f0f0;
+  }
+
+  .nav-socials .linkedin-link {
+    color: #0a66c2;
+  }
+
+  .nav-socials .instagram-link {
+    color: #e4405f;
   }
 
   .hero,
@@ -1852,7 +1908,29 @@ footer p {
 }
 
 @media (max-width: 560px) {
-  .nav-contact {
-    display: none;
+  .navbar {
+    gap: 6px;
+  }
+
+  .nav-links {
+    gap: clamp(7px, 2.4vw, 12px);
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .nav-socials {
+    gap: 3px;
+  }
+
+  .nav-socials a {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-socials svg {
+    width: 15px;
+    height: 15px;
   }
 }

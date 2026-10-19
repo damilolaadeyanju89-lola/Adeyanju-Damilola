@@ -115,6 +115,44 @@ function App() {
           <a href="#contact">Contact</a>
         </div>
 
+        <div className="nav-socials" aria-label="Social media links">
+          <a
+            href="https://github.com/damilolaadeyanju89-lola"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="github-link"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.59 2.35 1.13 2.92.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 7.15c.85 0 1.71.12 2.51.36 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v1.41c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/adeyanju-damilola-1ba754309"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="linkedin-link"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5.2 7.1A1.8 1.8 0 1 0 5.2 3.5a1.8 1.8 0 0 0 0 3.6ZM3.7 20.5h3V9h-3v11.5ZM8.8 9v11.5h3v-5.69c0-1.5.28-2.95 2.14-2.95 1.83 0 1.85 1.71 1.85 3.05v5.59h3V14.2c0-3.1-.67-5.48-4.29-5.48-1.74 0-2.91.96-3.39 1.87h-.04V9H8.8Z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="instagram-link"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" />
+              <circle cx="12" cy="12" r="4.1" />
+              <circle cx="17.4" cy="6.7" r="1" className="instagram-dot" />
+            </svg>
+          </a>
+        </div>
+
         <a href="mailto:damilolaadeyanju89@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Damilola%2C%0A%0AI%27d%20like%20to%20talk%20about%20a%20project." className="nav-contact">
           Let's talk ↑
         </a>
