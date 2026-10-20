@@ -56,9 +56,21 @@ a {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 25px;
   font-weight: 800;
   letter-spacing: -2px;
+}
+
+.logo img {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 28%;
 }
 
 .logo span,
@@ -929,7 +941,7 @@ footer strong span {
   mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
 
-.about-image span {
+.about-image > span {
   position: relative;
   z-index: 2;
   display: inline-block;
@@ -944,6 +956,68 @@ footer strong span {
   font-size: 10px;
   letter-spacing: 0.14em;
   color: rgba(255, 255, 255, 0.72);
+}
+
+.about-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 18px 0;
+}
+
+.about-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-socials a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.about-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.about-socials svg rect,
+.about-socials svg circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.about-socials svg .instagram-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.about-socials .email-link {
+  min-width: 0;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
+
+.about-socials .email-link svg {
+  flex: 0 0 auto;
+}
+
+.about-socials .github-link {
+  color: #f0f0f0;
+}
+
+.about-socials .linkedin-link {
+  color: #0a66c2;
+}
+
+.about-socials .instagram-link {
+  color: #e4405f;
 }
 
 .about-text {
@@ -1522,6 +1596,21 @@ footer strong {
   letter-spacing: -2px;
 }
 
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-brand img {
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
 footer p {
   margin-top: 7px;
   font-family: "DM Mono", monospace;
@@ -1570,9 +1659,19 @@ footer p {
   stroke-width: 1.8;
 }
 
+.footer-social-icon svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
 .footer-social-icon svg .instagram-dot {
   fill: currentColor;
   stroke: none;
+}
+
+.footer-links .email-link {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .github-link .footer-social-icon {
@@ -1645,6 +1744,16 @@ footer p {
     padding: 0 4vw;
   }
 
+  .logo {
+    gap: 7px;
+    font-size: 21px;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+
   .nav-links {
     position: static;
     transform: none;
@@ -1688,6 +1797,12 @@ footer p {
 
   .nav-socials svg rect,
   .nav-socials svg circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+  }
+
+  .nav-socials svg path {
     fill: none;
     stroke: currentColor;
     stroke-width: 1.8;
@@ -1798,6 +1913,10 @@ footer p {
     right: auto;
     width: min(100%, 290px);
     margin-top: 38px;
+  }
+
+  .about-socials {
+    display: none;
   }
 
   .about-text {
