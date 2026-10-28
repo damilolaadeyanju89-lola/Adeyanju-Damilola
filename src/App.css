@@ -1020,6 +1020,10 @@ footer strong span {
   color: #e4405f;
 }
 
+.about-socials .whatsapp-link {
+  color: #25d366;
+}
+
 .about-text {
   position: relative;
   z-index: 2;
@@ -1686,6 +1690,10 @@ footer p {
   color: #e4405f;
 }
 
+.whatsapp-link .footer-social-icon {
+  color: #25d366;
+}
+
 .footer-links a:hover .footer-social-icon {
   transform: translateY(-2px);
 }
@@ -1823,6 +1831,10 @@ footer p {
 
   .nav-socials .instagram-link {
     color: #e4405f;
+  }
+
+  .nav-socials .whatsapp-link {
+    color: #25d366;
   }
 
   .hero,

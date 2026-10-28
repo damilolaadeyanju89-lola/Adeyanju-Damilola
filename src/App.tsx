@@ -162,6 +162,18 @@ function App() {
               <path d="m4 7 8 6 8-6" />
             </svg>
           </a>
+          <a
+            href="https://wa.link/zlv6tm"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Damilola Adeyanju"
+            className="whatsapp-link"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M8.5 8.8c.3-.5.8-.6 1.2-.3l1.2 1.1c.3.3.3.7.1 1l-.5.7c.5 1 1.3 1.7 2.3 2.2l.7-.5c.3-.2.7-.2 1 .1l1.1 1.2c.3.4.2.9-.3 1.2-.6.4-1.3.5-2 .2-2.6-.9-4.6-2.9-5.5-5.5-.3-.7-.2-1.4.2-2Z" />
+            </svg>
+          </a>
         </div>
 
         <a href="mailto:damilolaadeyanju89@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Damilola%2C%0A%0AI%27d%20like%20to%20talk%20about%20a%20project." className="nav-contact">
@@ -361,7 +373,18 @@ function App() {
                     <rect x="3" y="5" width="18" height="14" rx="1.5" />
                     <path d="m4 7 8 6 8-6" />
                   </svg>
-                  <span>damilolaadeyanju89@gmail.com</span>
+                </a>
+                <a
+                  href="https://wa.link/zlv6tm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp Damilola Adeyanju"
+                  className="whatsapp-link"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M8.5 8.8c.3-.5.8-.6 1.2-.3l1.2 1.1c.3.3.3.7.1 1l-.5.7c.5 1 1.3 1.7 2.3 2.2l.7-.5c.3-.2.7-.2 1 .1l1.1 1.2c.3.4.2.9-.3 1.2-.6.4-1.3.5-2 .2-2.6-.9-4.6-2.9-5.5-5.5-.3-.7-.2-1.4.2-2Z" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -593,6 +616,7 @@ function App() {
           </a>
           <a
             href="mailto:damilolaadeyanju89@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Damilola%2C%0A%0AI%27d%20like%20to%20talk%20about%20a%20project."
+            aria-label="Email Damilola Adeyanju"
             className="footer-social-link email-link"
           >
             <span className="footer-social-icon" aria-hidden="true">
@@ -601,7 +625,20 @@ function App() {
                 <path d="m4 7 8 6 8-6" />
               </svg>
             </span>
-            damilolaadeyanju89@gmail.com
+          </a>
+          <a
+            href="https://wa.link/zlv6tm"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Damilola Adeyanju"
+            className="footer-social-link whatsapp-link"
+          >
+            <span className="footer-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8.5 8.8c.3-.5.8-.6 1.2-.3l1.2 1.1c.3.3.3.7.1 1l-.5.7c.5 1 1.3 1.7 2.3 2.2l.7-.5c.3-.2.7-.2 1 .1l1.1 1.2c.3.4.2.9-.3 1.2-.6.4-1.3.5-2 .2-2.6-.9-4.6-2.9-5.5-5.5-.3-.7-.2-1.4.2-2Z" />
+              </svg>
+            </span>
           </a>
         </div>
       </footer>
