@@ -1784,14 +1784,29 @@ footer p {
 
   .nav-links {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: clamp(9px, 3.2vw, 18px);
+    left: 96px;
+    right: calc(4vw + 30px);
+    width: auto;
+    transform: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: normal;
+    gap: 0;
+    flex-wrap: nowrap;
   }
 
   .nav-links a {
     font-size: 11px;
     letter-spacing: 0.04em;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .nav-links a.active::after {
+    left: 50%;
+    right: auto;
+    width: 3em;
+    transform: translateX(-50%);
   }
 
   .nav-contact {
@@ -2080,7 +2095,9 @@ footer p {
   }
 
   .nav-links {
-    gap: clamp(7px, 2.4vw, 12px);
+    left: 92px;
+    right: calc(4vw + 26px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .nav-links a {
