@@ -1040,7 +1040,8 @@ footer strong span {
 }
 
 .text-link {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 15px;
   padding-bottom: 7px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -1050,7 +1051,8 @@ footer strong span {
 }
 
 .cv-link {
-  margin-left: 22px;
+  margin-left: 0;
+  margin-top: 22px;
 }
 
 /* SKILLS */
@@ -1291,9 +1293,18 @@ footer strong span {
 }
 
 .company {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 12px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.08);
   font-family: "DM Mono", monospace;
-  font-size: 9px;
-  opacity: 0.4;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.92);
+  opacity: 1;
   text-transform: uppercase;
 }
 
@@ -1319,15 +1330,6 @@ footer strong span {
   line-height: 1;
   letter-spacing: -0.045em;
   font-weight: 700;
-}
-
-.company {
-  margin-top: 10px;
-  font-family: "DM Mono", monospace;
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.68);
-  text-transform: uppercase;
 }
 
 .experience-arrow {
@@ -1744,6 +1746,24 @@ footer p {
   }
 }
 
+@keyframes mobileSocialIconGrow {
+  0% {
+    transform: scale(1);
+  }
+
+  33.333% {
+    transform: scale(1.1);
+  }
+
+  66.666% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
 /* MOBILE */
 
 @media (max-width: 800px) {
@@ -1763,8 +1783,9 @@ footer p {
   }
 
   .nav-links {
-    position: static;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     gap: clamp(9px, 3.2vw, 18px);
   }
 
@@ -1778,9 +1799,23 @@ footer p {
   }
 
   .nav-socials {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 4vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: clamp(6px, 2vw, 10px);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav-socials-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .nav-socials a {
@@ -1801,6 +1836,7 @@ footer p {
     width: 17px;
     height: 17px;
     fill: currentColor;
+    animation: mobileSocialIconGrow 3s ease-in-out infinite;
   }
 
   .nav-socials svg rect,

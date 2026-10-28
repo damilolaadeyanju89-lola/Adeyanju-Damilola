@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "./App.css";
 import meImage from "./assets/me.jpg";
@@ -45,6 +45,8 @@ function App() {
   const heroTitle = useRef<HTMLHeadingElement>(null);
   const heroText = useRef<HTMLParagraphElement>(null);
   const heroButtons = useRef<HTMLDivElement>(null);
+  const heroSection = useRef<HTMLElement>(null);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
 
   useEffect(() => {
     if (window.location.pathname === "/works" || window.location.pathname === "/works/") {
@@ -96,6 +98,21 @@ function App() {
       );
   }, []);
 
+  useEffect(() => {
+    if (!heroSection.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsHeroVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+
+    observer.observe(heroSection.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   if (window.location.pathname === "/works" || window.location.pathname === "/works/") {
     return <WorksPage />;
   }
@@ -116,7 +133,10 @@ function App() {
           <a href="#contact">Contact</a>
         </div>
 
-        <div className="nav-socials" aria-label="Social media links">
+        <div
+          className={`nav-socials${isHeroVisible ? "" : " nav-socials-hidden"}`}
+          aria-label="Social media links"
+        >
           <a
             href="https://github.com/damilolaadeyanju89-lola"
             target="_blank"
@@ -182,7 +202,7 @@ function App() {
       </nav>
 
       {/* HERO */}
-      <section className="hero" id="top">
+      <section className="hero" id="top" ref={heroSection}>
         <div className="hero-background">
           <div className="orb orb-one"></div>
           <div className="orb orb-two"></div>
@@ -413,7 +433,7 @@ function App() {
               download="ADEYANJU-DAMILOLA-CV.pdf"
               className="text-link cv-link"
             >
-              Download my CV ↓
+              Download CV ↓
             </a>
           </div>
         </div>
